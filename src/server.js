@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 const express = require('express');
 const exphbs = require('express-handlebars');
@@ -12,11 +12,12 @@ app.set('port', process.env.PORT || 3000);
 // MIDDLEWARES
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 // RUTAS
 app.use('/api', require('../src/routes_4_Quality/questionRoute'));
 
+//SETTINGS HBS
 app.engine('hbs', exphbs({
     defaultLayout: 'main', 
     partialsDir: __dirname + '/views/partials/', 
@@ -25,6 +26,10 @@ app.engine('hbs', exphbs({
 }));
 
 app.set('view engine', 'hbs');
+
+//STATICS FILES
 app.use(express.static(__dirname + '/public'));
+
+
 
 module.exports = app;

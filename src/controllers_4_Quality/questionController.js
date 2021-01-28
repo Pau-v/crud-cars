@@ -1,4 +1,4 @@
-"use strict";
+'use strict'
 
 const Question = require('../models/questionModel');
 
