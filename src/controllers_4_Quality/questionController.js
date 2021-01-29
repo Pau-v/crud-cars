@@ -4,7 +4,7 @@ const Question = require('../models/questionModel');
 
 const questionController = {
     showAllQuestions: (req, res) => {
-        res.render('home');
+        res.render('templates/template');
     }
 };
 
