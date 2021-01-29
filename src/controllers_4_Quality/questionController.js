@@ -3,8 +3,8 @@
 const Question = require('../models/questionModel');
 
 const questionController = {
-    showAllQuestions: async (req, res) => {
-        res.render('../views/templates');
+    showAllQuestions: (req, res) => {
+        res.render('home');
     }
 };
 

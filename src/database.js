@@ -6,7 +6,9 @@ const uri = 'mongodb://localhost:27017/db-cars';
 
 mongoose.connect(uri, {
     useUnifiedTopology: true, 
-    useNewUrlParser: true
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false
 })
 
     .then( db => console.log(`db connected to ${uri}`))
