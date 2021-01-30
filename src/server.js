@@ -8,7 +8,7 @@ const morgan = require('morgan');
 const app = express();
 
 //SETTINGS
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 
 //SETTINGS HBS
