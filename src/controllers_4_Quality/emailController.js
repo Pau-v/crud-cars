@@ -2,6 +2,8 @@
 
 const nodemailer = require('nodemailer');
 
+const Email = require('../models/emailModel');
+
 const emailController = {
     showFormToSendEmail: (req, res) => {
         res.render('templates/formTemplate');
@@ -9,7 +11,8 @@ const emailController = {
 
     postEmail: async (req, res) => {
         const { name, email, phone, message } = req.body;
-
+        const newEmail = new Email ({ name, email, phone, message });
+        await newEmail.save();
         console.log(req.body)
 
         const contentHTML = `
@@ -43,6 +46,7 @@ const emailController = {
         });
 
         console.log('Message sent', info.messageId);
+        res.redirect('/');
     }
 };
 

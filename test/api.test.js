@@ -59,18 +59,20 @@ describe('GET/user/:id', () => {
     });
 });
 
-describe('POST/user', () => {
-    it('should responsed user created', done => {
+describe('POST/email', () => {
+    it('should responsed email created', done => {
         const data = {
-            username: 'fisfas',
-            password: 'fusfis'
+            name: 'fisfas',
+            email: 'fus@fis',
+            phone: '5555',
+            message: '3333'
         }
 
         request(app)
             //Aqui debemos poner nuestra ruta tal cual la tenemos en el controlador
-            .post('/users')
+            .post('/send-email')
             .send(data)
-            .set('Acecept', 'application/json')
+            .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(201)
             .end((err) => {
@@ -82,13 +84,13 @@ describe('POST/user', () => {
     it('should reponsed with 400/bad request', done => {
         const data = {}
         request(app)
-            .post('/users')
+            .post('/send-email')
             .send(data)
-            .set('Acecept', 'application/json')
+            .set('Accept', 'application/json')
             .expect('Content-Type', /json/)
             .expect(400)
             //Aqui hay que recordar que tiene que ser el mismo mensaje que tengamos en nuestro controlador, en el caso de error
-            .expect('user no created')
+            .expect('email no created')
             .end((err) => {
                 if (err) return done(err);
                 done(err)
