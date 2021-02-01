@@ -27,8 +27,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // RUTAS
-app.use('/api', require('./routes_4_Quality/questionRoute'));
-app.use('/api', require('./routes_4_Quality/emailRoute'));
+app.use(require('./routes_4_Quality/questionRoute'));
+app.use(require('./routes_4_Quality/emailRoute'));
 
 //STATICS FILES
 app.use(express.static(__dirname + '/public'));
