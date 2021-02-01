@@ -14,11 +14,7 @@ app.set('views', __dirname + '/views');
 //SETTINGS HBS
 app.engine('.hbs', exphbs({
     defaultLayout: 'main', 
-    partialsDir: __dirname + '/views/partials/',
-    partialsDir: __dirname + '/views/templates/',
-    partialsDir: __dirname + '/views/partials/atoms',
-    partialsDir: __dirname + '/views/partials/molecules',
-    partialsDir: __dirname + '/views/partials/organisms',    
+    partialsDir: __dirname + '/views/partials/', 
     layoutsDir: __dirname + '/views/layouts/',
     extname: '.hbs'
 }));
@@ -32,6 +28,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // RUTAS
 app.use('/api', require('./routes_4_Quality/questionRoute'));
+app.use('/api', require('./routes_4_Quality/emailRoute'));
 
 //STATICS FILES
 app.use(express.static(__dirname + '/public'));
