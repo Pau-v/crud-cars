@@ -11,8 +11,8 @@ const emailController = {
 
     postEmail: async (req, res) => {
         const { name, email, phone, message } = req.body;
-        const newEmail = new Email ({ name, email, phone, message });
-        await newEmail.save();
+        /* const newEmail = new Email ({ name, email, phone, message });
+        await newEmail.save(); */
         console.log(req.body)
 
         const contentHTML = `
@@ -32,8 +32,8 @@ const emailController = {
             port: '587',
             secure: false,
             auth: {
-                user: 'newton34@ethereal.email',
-                pass: 'ZGd3XcX1jUk4PM43pR'
+                user: 'asia77@ethereal.email',
+                pass: 'dDVGuEczQWaWQzqDkW'
             }
         });
 
