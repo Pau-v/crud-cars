@@ -2,6 +2,8 @@
 
 const request = require('supertest');
 const app = require('../src/server');
+/* //Este packete serviria para generar un ID, en el caso que estemos haciendo pruebas sin BBDD
+const { nanoid } = require('nanoid'); */
 
 let testServer
 //El before all, es para que antes de que todo el proceso de pruebas se inicie, arranque el servidor//TAMBIEN SE PUEDE USAR EL beforeEach()
@@ -10,11 +12,11 @@ beforeAll(() => {
 })
 
 //Aquí decimos que despues de que todas las pruebas se realicen, cierra el servidor
-afterAll(() => {
+afterAll((done) => {
     testServer.close(done)
 })
 
-describe('GET /users', () => {
+/* describe('GET /users', () => {
     it('should return all users', async () => {
         const response = await request(app).get('/users')
 
@@ -27,7 +29,7 @@ describe('GET /users', () => {
     })
 })
 
-describe('GET/users/:id', () => {
+describe('GET /users/:id', () => {
     it('should GET a exercise', async () => {
         const response = await response(app).get('/users/1')
 
@@ -39,5 +41,21 @@ describe('GET/users/:id', () => {
     })
 })
 
+describe('POST /users', () => {
+    it('should POST a new user', async () => {
+        const userId = nanoid()
+        let user = {
+            id: userId,
+            name: 'Nuevo Usuario',
+            username: nuevo_usuario
+        }
+
+        const response = await (await request(app).post('/users')).setEncoding(user)
+        expect(response.error).toBe(false)
+        expect(response.status).toBe(200)
+        expect(response.body.body).not.toBeNull()
+        expect(response.body.body.id).toBe(userId)
+    })
+}) */
 
 //ALMACENAR APP.LISTEN EN UNA CONSTANTE LLAMANDA SERVER Y EXPORTARLA

@@ -4,6 +4,9 @@ const app = require('./server');
 
 require('./database');
 
-app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
     console.log('server on port', app.get('port')) 
 });
+
+//Almacenamos la conexión a la bbdd en una const, para poder exportarla y usarla en el testing
+module.exports = server;

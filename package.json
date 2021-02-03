@@ -6,7 +6,8 @@
   "scripts": {
     "start": "src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest --runInBand"
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage"
   },
   "jest": {
     "testEnvironment": "node"
@@ -28,6 +29,7 @@
     "jest": "^26.6.3",
     "mocha": "^8.2.1",
     "mongoose": "^5.11.13",
+    "nanoid": "^3.1.20",
     "nodemailer": "^6.4.17",
     "supertest": "^6.1.3"
   },
