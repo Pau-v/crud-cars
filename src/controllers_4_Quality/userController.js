@@ -1,5 +1,7 @@
 'use strict'
-const { request } = require('express');
+
+const passport = require('passport');
+
 const User = require('../models/userModel');
 
 const usersController = {
@@ -8,15 +10,46 @@ const usersController = {
         response.send('nos devolvería un formulario de registro');
     },
 
-    saveLogin: async (request,response) => {
+    createNewUser: async (request,response) => {
         const {name,lastname,dni,email,password} = req.body;
         const newUser = new User ({name,lastname,dni,email,password});
         await newUser.save();
-        response.send ('formulario enviado-hay que crear el parcial')
+        response.send ('formulario enviado-hay que crear el parcial');
+    },
+
+    showFormToUpdate: (request, response) => {
+        response.send('formulario para actualizar usuario');
+    },
+    
+    updateUser: async (request, response) => {
+        const {name, lastname, dni, email, password} = req.body;
+        await User.findByIdAndUpdate (request.params.id, {name, lastname, dni, email, password});
+        response.send ('Renderizaremos nuevos datos de usuario');
+    },
+
+    userLogin:(request, rersponse) =>{
+        response.send('formulario login usuario existente');
+    },
+
+    loginVerification: async (request, response) => {
+        const {email, password} = req.body;
+        const emailUser = await User.find({email});
+        const passwordUser = await User.find({password});
+
+        if(email != emailUser ){
+            response.redirect ('formulario login usuario existente', {emailInvalid: true});
+        }
+        if( password != passwordUser){
+            response.redirect('formulario login usuario existente', {passwordInvalid: true});
+        }
+
+        response.send('usuario logeado');
+    },
+    
+    logout: (request, response) => {
+        request.logout();
+        response.redirect('formulario de acceso')
     }
-
-
-
 
 };
 
