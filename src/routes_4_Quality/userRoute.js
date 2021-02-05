@@ -7,10 +7,9 @@ const usersController = require ('../controllers_4_Quality/userController');
 
 router.get('/users/newUser', usersController.showLoginSignup);
 router.post('/usersSave',usersController.saveLogin);
-router.get('/users/form/:id', usersController.showFormToUpdate);
-router.put('/users/update/:id', usersController.updateNewUser);
 router.get('/users/signin', usersController.userLogin);
-router.post('/users/login', usersController.loginVerification);
+router.post('/users/signin', usersController.signin)
+router.post('/users/signup', usersController.loginSignUp);
 router.get('/users/logout', usersController.logout);
 
 

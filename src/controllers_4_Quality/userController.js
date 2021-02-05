@@ -17,21 +17,11 @@ const usersController = {
         response.send ('formulario enviado-hay que crear el parcial');
     },
 
-    showFormToUpdate: (request, response) => {
-        response.send('formulario para actualizar usuario');
-    },
-    
-    updateUser: async (request, response) => {
-        const {name, lastname, dni, email, password} = req.body;
-        await User.findByIdAndUpdate (request.params.id, {name, lastname, dni, email, password});
-        response.send ('Renderizaremos nuevos datos de usuario');
-    },
-
     userLogin:(request, rersponse) =>{
         response.send('formulario login usuario existente');
     },
 
-    loginVerification: async (request, response) => {
+    loginSignUp: async (request, response) => {
         const {email, password} = req.body;
         const emailUser = await User.find({email});
         const passwordUser = await User.find({password});
@@ -45,7 +35,11 @@ const usersController = {
 
         response.send('usuario logeado');
     },
-    
+    signin: passport.authenticate('local', {
+            failureRedirect: '/users/signin',
+            successRedirect: '/faqs',
+            failureFlash: true
+    }),
     logout: (request, response) => {
         request.logout();
         response.redirect('formulario de acceso')
