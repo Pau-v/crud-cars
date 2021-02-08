@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 const Email = require('../models/emailModel');
 
 const emailController = {
+    
     showFormToSendEmail: (req, res) => {
         res.render('templates/formTemplate');
     },

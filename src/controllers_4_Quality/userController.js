@@ -35,11 +35,13 @@ const usersController = {
 
         response.send('usuario logeado');
     },
+
     signin: passport.authenticate('local', {
             failureRedirect: '/users/signin',
             successRedirect: '/faqs',
             failureFlash: true
     }),
+    
     logout: (request, response) => {
         request.logout();
         response.redirect('formulario de acceso')
