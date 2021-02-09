@@ -27,9 +27,6 @@ bot.hears(['LLAMAR', 'llamar', 'Llamar'], ctx => {
     ctx.leaveChat();
 });
 
-
-
-
 bot.launch();
 
 

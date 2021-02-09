@@ -46,7 +46,6 @@ const usersController = {
         request.logout();
         response.redirect('formulario de acceso')
     }
-
 };
 
 module.exports = usersController;
