@@ -7,7 +7,7 @@ const Email = require('../models/emailModel');
 const emailController = {
     
     showFormToSendEmail: (req, res) => {
-        res.render('templates/formTemplate');
+        res.render('templates/formComplainTemplate');
     },
 
     postEmail: async (req, res) => {
