@@ -1,23 +1,15 @@
 <header>
-    {{> atom-h1-title-default}}
+    <h1>Centro de ayuda</h1>
 </header>
 
-{{> atom-h2-frecuency-default}}
-{{> atom-h3-default}}
+<h2>Preguntas más frecuentes</h2>
+<h3>Más populares</h3>
 
 <section>
-    <article>
-        {{> atom-question-default}}
-        {{> atom-p-info-default }}
-    </article>
-
-    <article>
-        {{> atom-question-default}}
-        {{> atom-p-info-default }}
-    </article>
-
-    <article>
-       {{> atom-question-default}}
-        {{> atom-p-info-default }}
-    </article>
+    {{#each question}}
+        <article>
+            <h4>{{ question }}</h4>
+            <p>{{ answer }}</p>
+        </article>
+    {{/each}}
 </section>

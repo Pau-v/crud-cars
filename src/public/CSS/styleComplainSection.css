@@ -3,7 +3,6 @@
     --button-color: #C2654E;
     --border: 2px solid #C2654E;
     --container-color: #BFBFBF;
-    --font-size:var(--bold);
 }
 
 * {
@@ -17,24 +16,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:var(--container-color)
-    
-    
+    background-color: var(--container-color)  
 }
 
-.h1__title__complain{
-    
-    
-}
 .container__form__complain{
     height: 80vh;
-    background-color:var(--container-color)
+    background-color: var(--container-color)
 }
 
 .container__form__complain form{
     display: flex;
     flex-direction: column;
-
 }
 
 .container__form__complain form input{
@@ -42,10 +34,7 @@
     height: 5vh;
     width: 40vw;
     margin: 2vh auto;
-    border:var(--border)
-   
-
-
+    border: var(--border)
 }
 
 .container__form__complain form textarea{
@@ -53,10 +42,7 @@
     height: 20vh;
     width: 40vw;
     margin: 2vh auto;
-    border:var(--border)
-    
-  
-
+    border: var(--border)
 }
 
 .button__submit_complain{

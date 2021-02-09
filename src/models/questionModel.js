@@ -3,18 +3,12 @@
 const { Schema, model } = require('mongoose');
 
 const QuestionSchema = new Schema ({
-    title: {
-        type: String,
-        required: [true, 'necesitas intriducir un título']
+    question: {
+        type: String
     },
-    description: {
-        type: String,
-        required: [true, 'necesitas introducir un texto']
-    },
-    date: {
-        type: Date,
-        default: Date.now
+    answer: {
+        type: String
     }
 });
 
-module.exports = model('Question', QuestionSchema);
+module.exports = model('Question', QuestionSchema, 'faqs');
