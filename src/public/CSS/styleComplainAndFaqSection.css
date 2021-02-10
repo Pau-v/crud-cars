@@ -73,9 +73,16 @@
     padding: 1vh;
 }
 
-.container__header__faqs > h1,
-.container__header__faqs > h2,
+.container__header__faqs > h1 {
+    font-size: 3rem;
+    padding: 2vh;
+}
+.container__header__faqs > h2 {
+    color: var(--text-color);
+    padding: 2vh;
+}
 .container__header__faqs > h3 {
+    color: var(--text-color);
     padding: 2vh;
 }
 
@@ -126,4 +133,5 @@
     margin: auto;
     margin-top: 9vh;
 }
+
 
