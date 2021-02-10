@@ -5,12 +5,19 @@
 <h2>Preguntas más frecuentes</h2>
 <h3>Más populares</h3>
 
-<section>
+<section class="container__section__faqs">
     {{#each question}}
-        <article>
-            <h4>{{ question }}</h4>
-            {{>faqsAtoms/atom-img-default}}
-            <p>{{ answer }}</p>
-        </article>
+    <div class="questions_accordions">
+        <section class="question-answer_accordion">
+            <article class="question">
+                <h4>{{ question }}</h4>
+                {{>atoms/faqsAtoms/atom-img-default}}
+            </article>
+            <article class="answer">
+                <p>{{ answer }}</p>
+
+            </article>
+        </section>
+    </div>
     {{/each}}
 </section>
