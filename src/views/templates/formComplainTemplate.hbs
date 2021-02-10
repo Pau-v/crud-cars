@@ -9,5 +9,9 @@
         <input type="text" name="phone" placeholder="Numero telefono...">
         <textarea name="message" rows="2" placeholder="Mensaje..."></textarea>
         <input class="button__submit_complain" type="submit" value="ENVIAR">
+    {{#if sendMessage}}
+        <h2 class="alert__h2__complain">Consulta enviada, un agente le enviará un email</h2>
+    {{/if}}
     </form>
+
 <main/>

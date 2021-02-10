@@ -3,12 +3,15 @@
     --button-color: #C2654E;
     --border: 2px solid #C2654E;
     --container-color: #BFBFBF;
+    --font-style: 'Montserrat', sans-serif;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--container-color);
+    font-family: var(--font-style);
 }
 
 .container__section__complain{
@@ -50,12 +53,38 @@
     color: white;
 }
 
+.alert__h2__complain {
+    width: 25vw;
+    padding: 3vh;
+    border: var(--border);
+    margin: auto;
+    text-align: center;
+    background-color: indianred;
+}
+
+/* SECTION FAQS */
+
+
+.container__header__faqs {
+    height: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vh;
+}
+
+.container__header__faqs > h1,
+.container__header__faqs > h2,
+.container__header__faqs > h3 {
+    padding: 2vh;
+}
+
 .question {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     transition: 0.4s;
-    padding: 3vh 0;
+    padding: 2vh 0;
 }
 
 .question-answer_accordion {
@@ -92,8 +121,9 @@
 }
 
 .container__section__faqs {
+    height: 70vh;
     width: 80vw;
     margin: auto;
-    margin-top: 5vh;
-
+    margin-top: 9vh;
 }
+

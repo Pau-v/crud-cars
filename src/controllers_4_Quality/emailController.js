@@ -7,7 +7,7 @@ const Email = require('../models/emailModel');
 const emailController = {
     
     showFormToSendEmail: (req, res) => {
-        res.render('templates/formComplainTemplate');
+        res.render('templates/formComplainTemplate', { sendMessage: false });
     },
 
     postEmail: async (req, res) => {
@@ -47,7 +47,7 @@ const emailController = {
         });
 
         console.log('Message sent', info.messageId);
-        res.redirect('/');
+        res.render('templates/formComplainTemplate', { sendMessage: true });
     }
 };
 
