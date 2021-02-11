@@ -33,8 +33,8 @@ const emailController = {
             port: '587',
             secure: false,
             auth: {
-                user: 'asia77@ethereal.email',
-                pass: 'dDVGuEczQWaWQzqDkW'
+                user: 'ottis.braun@ethereal.email',
+                pass: 'DeXYXeHkpEzrFzwtUa'
             }
         });
 
@@ -42,7 +42,7 @@ const emailController = {
         const info = await transporter.sendMail({
             from: 'Receptor',
             to: 'simplyfiers.F5@gmail.com',
-            subject: 'Formulario enviado desde Nodemiler',
+            subject: 'Formulario enviado desde Cars.Net',
             html: contentHTML
         });
 

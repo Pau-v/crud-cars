@@ -1,12 +1,12 @@
 'use strict'
 
 const { response } = require('express');
-const Question = require('../models/questionModel');
+const question = require('../api.json/faqs.json');
 
 const questionController = {
     
     showAllQuestions: async(req, res) => {
-        const question = await Question.find().lean();
+        /* const question = await Question.find().lean(); */
         res.render('templates/faqsTemplate', { question })
         /* res.render('templates/faqsTemplate'); */
     }
