@@ -1,0 +1,32 @@
+{
+    "formComplain": [
+      {
+        "type": "text",
+        "name": "name",
+        "placeholder": "Name...",
+        "required": true
+      },
+      {
+        "type": "email",
+        "name": "email",
+        "placeholder": "Email...",
+        "required": true
+      },
+      {
+        "type": "text",
+        "name": "phone",
+        "placeholder": "No. de Telefono...",
+        "required": true
+      },
+      {
+        "type": "textArea",
+        "name": "Message",
+        "placeholder": "Mensaje...",
+        "required": true
+      },
+      {
+        "type": "submit",
+        "value": "ENVIAR"
+      }
+  ]
+}
