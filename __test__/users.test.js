@@ -2,6 +2,7 @@
 
 const request = require('supertest');
 const app = require('../src/server');
+const  { EmailSchema } = require('../src/models/emailModel');
 /* //Este packete serviria para generar un ID, en el caso que estemos haciendo pruebas sin BBDD
 const { nanoid } = require('nanoid'); */
 
@@ -16,46 +17,28 @@ afterAll((done) => {
     testServer.close(done)
 })
 
-/* describe('GET /users', () => {
-    it('should return all users', async () => {
-        const response = await request(app).get('/users')
-
-        expect(response.error).toBe(false)
-        expect(response.status).toBe(200)
-        expect(response.body.body).not.toBeNull()
-        expect(Array.isArray(response.body.body)).toBe(true)
-        //Aqui pondremos dentro del toBe, el numero de usuarios que tenemos, a modo de prueba solamente
-        expect(response.body.body.length).toBe()
+test('should send message and email', async () => {
+    await request(app).post('/send-email')
+    .send({
+        name: 'name',
+        email: 'email@email',
+        phone: '12345',
+        message: 'message'
     })
+
+    expect(201)
 })
 
-describe('GET /users/:id', () => {
-    it('should GET a exercise', async () => {
-        const response = await response(app).get('/users/1')
-
-        expect(response.error).toBe(false)
-        expect(response.status).toBe(200)
-        expect(response.body.body).not.toBeNull()
-        //Aqui pondremos dentro de la funcion toBe el numero de id del usuario que queramos comprobar
-        expect(response.body.body.id).toBe(1)
+/* test('should contain a name') */
+/* test('should does not send message and email', async () => {
+    await request(app).post('/send-email')
+    .send({
+        /* name: 'name', */
+        email: 'email@email',
+        phone: '12345',
+        message: 'message'
     })
-})
 
-describe('POST /users', () => {
-    it('should POST a new user', async () => {
-        const userId = nanoid()
-        let user = {
-            id: userId,
-            name: 'Nuevo Usuario',
-            username: nuevo_usuario
-        }
-
-        const response = await (await request(app).post('/users')).setEncoding(user)
-        expect(response.error).toBe(false)
-        expect(response.status).toBe(200)
-        expect(response.body.body).not.toBeNull()
-        expect(response.body.body.id).toBe(userId)
-    })
+    expect(417)
 }) */
 
-//ALMACENAR APP.LISTEN EN UNA CONSTANTE LLAMANDA SERVER Y EXPORTARLA

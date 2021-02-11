@@ -1,7 +1,6 @@
 'use strict'
 
 const { response } = require('express');
-const Question = require('../models/questionModel');
 const question = require('../api.json/faqs.json');
 
 const questionController = {
