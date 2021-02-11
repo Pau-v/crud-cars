@@ -1,20 +1,20 @@
 'use strict'
 
-// const request = require('supertest');
-// const app = require('../src/server');
+const request = require('supertest');
+const app = require('../src/server');
 /* //Este packete serviria para generar un ID, en el caso que estemos haciendo pruebas sin BBDD
 const { nanoid } = require('nanoid'); */
 
-// let testServer
+let testServer
 //El before all, es para que antes de que todo el proceso de pruebas se inicie, arranque el servidor//TAMBIEN SE PUEDE USAR EL beforeEach()
-// beforeAll(() => {
-//     testServer = app.listen(3000)
-// })
+beforeAll(() => {
+    testServer = app.listen(3000)
+})
 
 //Aquí decimos que despues de que todas las pruebas se realicen, cierra el servidor
-// afterAll((done) => {
-//     testServer.close(done)
-// })
+afterAll((done) => {
+    testServer.close(done)
+})
 
 /* describe('GET /users', () => {
     it('should return all users', async () => {
@@ -59,19 +59,3 @@ describe('POST /users', () => {
 }) */
 
 //ALMACENAR APP.LISTEN EN UNA CONSTANTE LLAMANDA SERVER Y EXPORTARLA
-
-
-beforeAll(async () => {
-       
-    connection = await mongoose.connect('mongodb://localhost:27017/test_'+process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology: true });
-    db = mongoose.connection;
-    const collection = process.env.COLLECTION;
-    await db.createCollection(collection);
- });
- afterAll(async () => {
-    const collection = "test_"+process.env.COLLECTION;
-    await db.dropCollection(collection);
-    await db.dropDatabase();
-    await db.close();
-    await connection.close();
- });
