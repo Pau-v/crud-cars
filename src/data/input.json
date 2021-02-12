@@ -1,0 +1,43 @@
+
+{
+    "formLogin" : [
+        {
+            "type":"text",
+            "placeholder":"Nombre...",
+            "modifier":"",
+            "id":"",
+            "name":"name",
+            "required":true
+        },
+        {
+            "type":"email",
+            "placeholder":"Email...",
+            "modifier":"",
+            "id":"",
+            "name":"email",
+            "required":true
+        },
+        {
+            "type":"text",
+            "placeholder":"Numero de telefono...",
+            "modifier":"",
+            "id":"",
+            "name":"phone",
+            "required":true
+        },
+        {
+            "type":"textarea",
+            "placeholder":"Introduzca un texto...",
+            "modifier":"",
+            "id":"",
+            "name":"message",
+            "required":true
+        },
+        {
+            "type":"submit",
+            "modifier":"",
+            "value":"SEND",
+            "required":false
+        }
+    ]
+}
