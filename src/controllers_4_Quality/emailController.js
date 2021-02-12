@@ -1,13 +1,13 @@
 'use strict'
 
 const nodemailer = require('nodemailer');
-
+const input = require('../data/input.json')
 const Email = require('../models/emailModel');
 
 const emailController = {
     
     showFormToSendEmail: (req, res) => {
-        res.render('templates/formComplainTemplate', { sendMessage: false });
+        res.render('templates/formComplainTemplate', { formComplain:input.formComplain, sendMessage: false });
     },
 
     postEmail: async (req, res) => {
