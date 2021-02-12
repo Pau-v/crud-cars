@@ -5,7 +5,7 @@
             "type":"text",
             "placeholder":"Nombre...",
             "modifier":"",
-            "id":"",
+            "id":"formComplain_text",
             "name":"name",
             "required":true
         },
@@ -13,7 +13,7 @@
             "type":"email",
             "placeholder":"Email...",
             "modifier":"",
-            "id":"",
+            "id":"formComplain_email",
             "name":"email",
             "required":true
         },
@@ -21,7 +21,7 @@
             "type":"text",
             "placeholder":"Numero de telefono...",
             "modifier":"",
-            "id":"",
+            "id":"formComplain_text",
             "name":"phone",
             "required":true
         },
@@ -29,13 +29,14 @@
             "type":"textarea",
             "placeholder":"Introduzca un texto...",
             "modifier":"",
-            "id":"",
+            "id":"formComplain_textarea",
             "name":"message",
             "required":true
         },
         {
             "type":"submit",
             "modifier":"",
+            "id": "formComplain_submit",
             "value":"SEND",
             "required":false
         }
