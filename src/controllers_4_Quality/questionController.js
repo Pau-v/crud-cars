@@ -5,7 +5,7 @@ const question = require('../data/faqs.json');
 
 const questionController = {
     
-    showAllQuestions: async(req, res) => {
+    showAllQuestions: (req, res) => {
         /* const question = await Question.find().lean(); */
         res.render('templates/faqsTemplate', { question })
         /* res.render('templates/faqsTemplate'); */
