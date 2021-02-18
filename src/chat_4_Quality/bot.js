@@ -19,12 +19,10 @@ bot.hears(['SI', 'Si', 'si'], ctx => {
 
 bot.hears(['NO', 'No', 'no'], ctx => {
     ctx.reply('Disculpa antes de usar el chat, comprueba que tu problema es de sencilla solución en la sección de FAQ´s');
-    ctx.leaveChat();
 });
 
 bot.hears(['LLAMAR', 'llamar', 'Llamar'], ctx => {
     ctx.reply('Gracias por usar nuestro chat, le pasamos con un agente. Buenas dias');
-    ctx.leaveChat();
 });
 
 bot.launch();
